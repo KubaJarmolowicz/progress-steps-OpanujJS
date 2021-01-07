@@ -1,0 +1,108 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+
+.inactive,
+.inactive:hover,
+.inactive:focus,
+.inactive:active {
+  user-select: none;
+  outline: none;
+  color: #596a73;
+  background-color: rgba(89, 106, 115, 0.2);
+  border: 1px solid #596a73;
+  cursor: default;
+}
+
+#cart-fill,
+#data-fill,
+#delivery-fill,
+#confirm-fill {
+  transform: translateX(-100%);
+}
+
+#postcart-bar,
+#postdata-bar,
+#postdelivery-bar {
+  transform: scaleX(0);
+}
+
+.circle-wrapper {
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #dae4e9;
+}
+
+.background-num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #596a73;
+}
+
+.circle-fill {
+  position: relative;
+  z-index: 5;
+}
+
+.bar-wrapper {
+  overflow: hidden;
+}
+
+.circle-animate-forwards {
+  animation-name: fillCircle;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+}
+
+.circle-animate-reverse {
+  animation-name: fillCircle;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+.bar-animate-forwards {
+  animation-name: fillBar;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.bar-animate-reverse {
+  animation-name: fillBar;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+.bar-stay-reverse {
+  transform: scaleX(0);
+}
+
+.button-holder {
+  height: 18px;
+  width: 82px;
+}
+
+@keyframes fillCircle {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fillBar {
+  from {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  to {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
